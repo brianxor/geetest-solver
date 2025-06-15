@@ -2,8 +2,8 @@ package handlers
 
 import (
 	"fmt"
-	"github.com/brianxor/geetest-solver/solver"
 	"github.com/labstack/echo/v4"
+	"github.com/tylerdevx/geetest-solver/solver"
 	"net/http"
 	"time"
 )

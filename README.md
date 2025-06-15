@@ -7,7 +7,7 @@ It uses no external dependencies, such as OpenCV, saving you from the hassle of 
 ## Installation
 
 ```sh
-git clone https://github.com/brianxor/geetest-solver.git
+git clone https://github.com/tylerdevx/geetest-solver.git
 cd geetest-solver
 go run .
 ```

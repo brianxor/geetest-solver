@@ -1,8 +1,8 @@
 package routes
 
 import (
-	"github.com/brianxor/geetest-solver/server/handlers"
 	"github.com/labstack/echo/v4"
+	"github.com/tylerdevx/geetest-solver/server/handlers"
 )
 
 func SetupRoutes(app *echo.Echo) {

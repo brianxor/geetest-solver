@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/brianxor/geetest-solver/server"
+	"github.com/tylerdevx/geetest-solver/server"
 	"log"
 )
 

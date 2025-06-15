@@ -4,9 +4,9 @@ import (
 	"crypto/rsa"
 	"encoding/base64"
 	"encoding/hex"
-	"github.com/brianxor/geetest-solver/detection"
-	"github.com/brianxor/geetest-solver/internal/crypto"
-	"github.com/brianxor/geetest-solver/internal/utils"
+	"github.com/tylerdevx/geetest-solver/internal/crypto"
+	"github.com/tylerdevx/geetest-solver/internal/utils"
+	"github.com/tylerdevx/geetest-solver/solver/detection"
 	"math/big"
 )
 
@@ -64,7 +64,6 @@ func (c *GeetestSolverConfig) generateV4PuzzlePayload(captchaInfo *V4PuzzleCaptc
 
 	puzzleImageBase64 := base64.StdEncoding.EncodeToString(puzzleImage)
 	pieceImageBase64 := base64.StdEncoding.EncodeToString(pieceImage)
-
 	puzzleSolver := detection.NewPuzzleSolver(puzzleImageBase64, pieceImageBase64)
 
 	xPos, err := puzzleSolver.GetPosition(captchaInfo.Data.Ypos)

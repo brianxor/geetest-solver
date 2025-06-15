@@ -6,7 +6,7 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"fmt"
-	"github.com/brianxor/geetest-solver/internal/crypto"
+	"github.com/tylerdevx/geetest-solver/internal/crypto"
 )
 
 var hashFunctions = map[string]func(string) string{
@@ -27,6 +27,12 @@ func (c *GeetestSolverConfig) SolveV4PuzzlePow(captchaInfo *V4PuzzleCaptchaInfo)
 		return nil, err
 	}
 
+	hashFunc, exists := hashFunctions[captchaInfo.Data.PowDetail.Hashfunc]
+
+	if !exists {
+		return nil, fmt.Errorf("pow hash function not found")
+	}
+
 	powMessage := fmt.Sprintf("%s|%d|%s|%s|%s|%s||%s",
 		captchaInfo.Data.PowDetail.Version,
 		captchaInfo.Data.PowDetail.Bits,
@@ -36,12 +42,6 @@ func (c *GeetestSolverConfig) SolveV4PuzzlePow(captchaInfo *V4PuzzleCaptchaInfo)
 		captchaInfo.Data.LotNumber,
 		deviceGuid,
 	)
-
-	hashFunc, exists := hashFunctions[captchaInfo.Data.PowDetail.Hashfunc]
-
-	if !exists {
-		return nil, fmt.Errorf("pow hash function not found")
-	}
 
 	powSign := hashFunc(powMessage)
 

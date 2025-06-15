@@ -2,9 +2,9 @@ package server
 
 import (
 	"fmt"
-	"github.com/brianxor/geetest-solver/server/middlewares"
-	"github.com/brianxor/geetest-solver/server/routes"
 	"github.com/labstack/echo/v4"
+	"github.com/tylerdevx/geetest-solver/server/middlewares"
+	"github.com/tylerdevx/geetest-solver/server/routes"
 )
 
 func Start(serverHost string, serverPort string) error {
